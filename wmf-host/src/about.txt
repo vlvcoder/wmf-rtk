@@ -1,0 +1,33 @@
+https://github.com/Hydrock/wmf-remote
+https://github.com/Hydrock/wmf-host/tree/main
+
+
+Настройки shared в ModuleFederation
+
+shared: {
+  react: { 
+    singleton: true,        // Обязательно!
+    requiredVersion: '^18.2.0',
+    eager: false            // Не используйте eager: true
+  },
+  'react-dom': { 
+    singleton: true,
+    requiredVersion: '^18.2.0' 
+  },
+  'react-redux': { 
+    singleton: true,
+    requiredVersion: '^8.0.0'
+  },
+  '@reduxjs/toolkit': {
+    singleton: true
+  }
+}
+
+
+
+///////////////////////////
+Рекомендация: Module Federation v2 
+
+javascript
+// Вместо встроенного плагина webpack
+const { ModuleFederationPlugin } = require('@module-federation/enhanced/webpack');
