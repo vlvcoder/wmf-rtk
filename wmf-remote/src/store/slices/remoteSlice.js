@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export const remoteSlice = createSlice({
-    name: 'remote',
+    name: 'remoteSlice',
     initialState,
     reducers: {
         increment: (state) => {
@@ -23,7 +23,6 @@ export const remoteSlice = createSlice({
             state.value += action.payload;
         },
         setStatus: (state, action) => {
-            console.log('~~ remote setStatus', action);            
             state.status = action.payload;
         },
         setData: (state, action) => {
@@ -46,6 +45,3 @@ export const useActionsRemote = () => {
     const dispatch = useDispatch();
     return bindActionCreators(remoteSlice.actions, dispatch);
 }
-
-// Экспорт редьюсера
-export default remoteSlice.reducer;

@@ -9,8 +9,8 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
     <Provider store={store}>
-        <Injector>
+        {/* <Injector> */}
             <App />
-        </Injector>
+        {/* </Injector> */}
     </Provider>
 );

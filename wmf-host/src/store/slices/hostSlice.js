@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export const hostSlice = createSlice({
-    name: 'host',
+    name: 'hostSlice',
     initialState,
     reducers: {
         increment: (state) => {
@@ -45,6 +45,3 @@ export const useActionsHost = () => {
     const dispatch = useDispatch();
     return bindActionCreators(hostSlice.actions, dispatch);
 }
-
-// Экспорт редьюсера
-export default hostSlice.reducer;

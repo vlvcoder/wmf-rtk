@@ -9,7 +9,7 @@ const style = {
 
 export function SimpleComponent() {
     const { increment, decrement } = useActionsHost();
-    const { value, status } = useSelector(state => state.host);
+    const { value, status } = useSelector(state => state.hostSlice);
     return (
         <div style={style}>
             Component from HOST app.

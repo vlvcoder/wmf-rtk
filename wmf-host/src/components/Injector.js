@@ -1,12 +1,19 @@
-import { injectReducer, store } from '../store/store';
+import { addMiddleware, injectReducer, store } from '../store/store';
 
-const module = await import('remoteApp/remoteSlice');
-injectReducer('remoteSlice', module.default);
+const sliceModule = await import('remoteApp/remoteSlice');
+injectReducer('remoteSlice', sliceModule.remoteSlice.reducer);
 
-// console.log('===========');
-// console.log(store.getState().host.status);
-// console.log(store.getState().remoteSlice.status);
-// await store.dispatch({ type: 'host/increment', payload:  store.getState().host.status });
-// console.log('===========');
+const apiModule = await import('remoteApp/remoteApi');
+injectReducer('remoteApi', apiModule.remoteApi.reducer);
+addMiddleware(apiModule.remoteApi.middleware);
 
-export const Injector = ({ children }) => children;
+console.log('===========');
+console.log(store.getState().hostSlice.status);
+console.log(store.getState().remoteSlice.status);
+await store.dispatch({ type: 'hostSlice/increment' });
+await store.dispatch({ type: 'remoteSlice/setStatus', payload:  store.getState().hostSlice.status });
+console.log('===========');
+
+export const Injector = ({ children }) => {
+    return children;
+};

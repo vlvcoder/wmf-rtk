@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const { ModuleFederationPlugin } = require('@module-federation/enhanced/webpack');
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+// const { ModuleFederationPlugin } = require('@module-federation/enhanced/webpack');
 const dependencies = require("./package.json").dependencies;
 
 module.exports = {
@@ -29,8 +29,10 @@ module.exports = {
             filename: "remoteEntry.js",
             exposes: {
                 "./RemoteComponent": "./src/components/RemoteComponent.js",
+                "./DisplayObject": "./src/components/DisplayObject.js",
                 "./utils": "./src/utils/index.js",
                 './remoteSlice': './src/store/slices/remoteSlice.js',
+                './remoteApi': './src/store/query/remoteApi.js',
             },
             shared: {
                 ...dependencies,

@@ -1,0 +1,26 @@
+{
+  "races-host": [
+    {
+      "from": "Host",
+      "to": "New York",
+      "date": "2025-12-31 15:40"
+    },
+    {
+      "from": "Host",
+      "to": "Nizhnevartosk",
+      "date": "2025-12-31 15:40"
+    }
+  ],
+  "races-remote": [
+    {
+      "from": "Remote",
+      "to": "New York",
+      "date": "2025-12-31 15:40"
+    },
+    {
+      "from": "Remote",
+      "to": "Nizhnevartosk",
+      "date": "2025-12-31 15:40"
+    }
+  ]
+}
