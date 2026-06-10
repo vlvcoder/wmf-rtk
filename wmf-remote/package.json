@@ -33,6 +33,7 @@
         "webpack-dev-server": "^5.2.2"
     },
     "dependencies": {
+        "@module-federation/enhanced": "^2.0.1",
         "@reduxjs/toolkit": "^2.11.2",
         "concurrently": "^7.4.0",
         "json-server": "^0.17.4",
